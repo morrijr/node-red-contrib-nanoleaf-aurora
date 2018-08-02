@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('installation', {
+        category: 'config',
+        color: '#e6e0f8',
+        icon: 'nanoleafAurora.png',
+        defaults: {
+            name: { value: '' },
+            host: { value: '' },
+            base: { value: '/api/v1/' },
+            port: { value: 16021 },
+            accessToken: { value: '' }
+        },
+        label: function() {
+            return this.name || 'installation';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="installation">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-tag"></i> Host</label>
+        <input type="text" id="node-config-input-host"/>
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="fa fa-tag"></i> Port</label>
+        <input type="number" id="node-config-input-port"/>
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-accessToken"><i class="fa fa-tag"></i> Access Token</label>
+        <input type="text" id="node-config-input-accessToken"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="installation">
+    <p>Nanoleaf Aurora installation details.</p>
+    <p>To get your access token see </p>
+</script>

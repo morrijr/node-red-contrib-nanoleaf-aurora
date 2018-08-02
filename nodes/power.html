@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('power', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'light.png',
+        inputs: 1,
+        outputs: 0,
+        defaults: {
+            name: { value: '' },
+            installation: { type: 'installation' }
+        },
+        label: function() {
+            return this.name || 'power';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="power">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
+        <input type="text" id="node-input-installation"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="power">
+    <p>Turn Nanoleaf Aurora on or off.</p>
+    <ul>
+        <li>Boolean payload; false = off, true = on</li>
+        <li>Numeric payload; 0 = off, 1 = on</li>
+        <li>String payload (case-insensitive); OFF = off, ON = on</li>
+    </ul>
+</script>

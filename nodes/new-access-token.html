@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('new-access-token', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'arrow-in.png',
+        inputs: 1,
+        outputs: 1,
+        defaults: {
+            host: { value: '' },
+            query: { value: '/api/v1/new' },
+            port: { value: 16021 },
+        },
+        label: function() {
+            return this.name || 'new access token';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="new-access-token">
+    <div class="form-row">
+        <label for="node-input-host"><i class="fa fa-tag"></i> Host</label>
+        <input type="text" id="node-input-host"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-tag"></i> Port</label>
+        <input type="number" id="node-input-port"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="new-access-token">
+    <p>Wire this node with an inject input and a debug node to the output.</p>
+    <p>Hold the on-off button down for 5-7 seconds until the LED starts flashing.</p>
+    <p>Trigger the input.</p>
+    <p>Output a <em>new</em> Nanoleaf Aurora access token into msg.payload.</p>
+</script>

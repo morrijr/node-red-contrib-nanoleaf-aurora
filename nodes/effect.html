@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    RED.nodes.registerType('effect', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'light.png',
+        align: 'right',
+        inputs: 1,
+        outputs: 0,
+        defaults: {
+            name: { value: '' },
+            installation: { type: 'installation' }
+        },
+        label: function() {
+            return this.name || 'effect';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="effect">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
+        <input type="text" id="node-input-installation"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="effect">
+    <p>Set the Nanoleaf Aurora effect.</p>
+    <p>Payload should be a (case-sensitive) description of the effect.</p>
+    <p>A list of effects can be found by using the effects node.</p>
+</script>

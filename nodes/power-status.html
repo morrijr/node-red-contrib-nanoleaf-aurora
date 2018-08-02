@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('power-status', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'light.png',
+        inputs: 1,
+        outputs: 1,
+        defaults: {
+            name: { value: '' },
+            installation: { type: 'installation' }
+        },
+        label: function() {
+            return this.name || 'power-status';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="power-status">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
+        <input type="text" id="node-input-installation"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="power-status">
+    <p>Upon trigger outputs the Nanoleaf Aurora information into msg.payload.</p>
+</script>
