@@ -12,6 +12,8 @@
     "nanoleaf",
     "aurora",
     "lights",
+    "light panels",
+    "home automation",
     "led"
   ],
   "license": "Apache-2.0",
@@ -30,5 +32,9 @@
       "new-access-token": "nodes/new-access-token.js"
     }
   },
-  "version": "0.0.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morrijr/node-red-contrib-nanoleaf-aurora.git"
+  },
+  "version": "0.0.2"
 }
