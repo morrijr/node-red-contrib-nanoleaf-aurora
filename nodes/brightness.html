@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('brightness', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'light.png',
+        align: 'right',
+        inputs: 1,
+        outputs: 0,
+        defaults: {
+            name: { value: '' },
+            installation: { type: 'installation' }
+        },
+        label: function() {
+            return this.name || 'brightness';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="brightness">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
+        <input type="text" id="node-input-installation"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="brightness">
+    <p>Set Nanoleaf Aurora brightness (integer; 0 -> 100).</p>
+</script>

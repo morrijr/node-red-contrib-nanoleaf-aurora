@@ -1,7 +1,7 @@
 module.exports = function (RED) {
     "use strict";
 
-    function Effect(config) {
+    function Brightness(config) {
         RED.nodes.createNode(this, config);
         var node = this;
 
@@ -9,20 +9,17 @@ module.exports = function (RED) {
 
         this.on("input", function (msg) {
             var payload = msg.payload;
-
-            if (typeof payload === "string") {
-                installationObj.api().setEffect(payload)
-                    .then(function (info) {
-                        node.send(msg);
-                    })
+            if (typeof payload === "number") {
+                installationObj.api().setBrightness(
+                    Math.min(100, Math.max(0, Math.trunc(payload))))
                     .catch(function (err) {
                         node.error(err.message, err);
-                    });
+                    })
             } else {
                 node.error(`Unknown payload type: ${typeof payload}`);
-            }
+            }             
         })
     }
 
-    RED.nodes.registerType("effect", Effect);
+    RED.nodes.registerType("brightness", Brightness);
 }

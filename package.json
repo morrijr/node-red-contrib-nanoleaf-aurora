@@ -22,6 +22,7 @@
     "nodes": {
       "installation": "nodes/installation.js",
 
+      "brightness": "nodes/brightness.js",
       "effects": "nodes/effects.js",
       "effect": "nodes/effect.js",
       "identify": "nodes/identify.js",
@@ -36,5 +37,5 @@
     "type": "git",
     "url": "git+https://github.com/morrijr/node-red-contrib-nanoleaf-aurora.git"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

@@ -20,7 +20,7 @@ module.exports = function (RED) {
                 (typeof payload === "string" && payload.toLocaleUpperCase() === 'OFF')) {
                 operation = installationObj.api().turnOff();
             } else {
-                node.error("Unrecognised payload.");
+                node.error(`Unrecognised payload type: ${typeof payload}`);
                 return;
             }
             operation
