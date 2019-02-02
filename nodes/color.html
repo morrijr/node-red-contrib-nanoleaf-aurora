@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    RED.nodes.registerType('color', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'light.png',
+        align: 'right',
+        inputs: 1,
+        outputs: 0,
+        defaults: {
+            name: { value: '' },
+            installation: { type: 'installation' }
+        },
+        label: function () {
+            return this.name || 'color';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="color">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
+        <input type="text" id="node-input-installation"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="color">
+    <p>Set Nanoleaf Aurora color</p>
+    <p>HSV where the payload is { hue, saturation, value } or { h, s, v }</p>
+    <p>RGB where the payload is { red, green, blue } or { r, g, b }</p>
+    <p>A payload with both HSV and RGB will use HSV</p>
+    <p>An empty payload will currently be ignored (plan to return current color in the future).</p>
+    <p>Currently no limits are in place, raw values are passed directly to the Nanoleaf.</p>
+    <p>Further enhancement maybe made to enable colors to be set in the style of CSS, but no promises!</p>
+</script>

@@ -27,6 +27,7 @@ Use this token when creating an installation of Nanoleaf Aurora for the other no
 * Brightness; set the current brightness. Integer payload; 0 -> 100. 
     - Numbers less than 0 are clipped to 0
     - Numbers greater than 100 clipped to 100
+* Color; initially support for RGB and HSV
 * Effects; list installed effects
 * Effect; set the current effect and start the show
 * Identify; flash the Nanoleaf Aurora installation on and off (colour cannot be changed)
@@ -37,6 +38,9 @@ Use this token when creating an installation of Nanoleaf Aurora for the other no
 * Power status; on/off
 
 ## Changelog ##
+
+### 0.0.4 (2019.02.02)
+- Added color node [requested](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/1) by arrichter
 
 ### 0.0.3 (2018.08.12)
 - Added brightness node
