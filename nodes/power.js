@@ -7,7 +7,7 @@ module.exports = function (RED) {
 
         var installationObj = RED.nodes.getNode(config.installation);
 
-        this.on("input", function (msg) {
+        this.on("input", (msg) => {
             var payload = msg.payload;
 
             var operation;
@@ -20,16 +20,12 @@ module.exports = function (RED) {
                 (typeof payload === "string" && payload.toLocaleUpperCase() === 'OFF')) {
                 operation = installationObj.api().turnOff();
             } else {
-                node.error(`Unrecognised payload type: ${typeof payload}`);
+                node.error(`Unrecognised payload type: ${typeof payload}. ${JSON.stringify(payload)}`);
                 return;
             }
             operation
-                .then(function (info) {
-                    node.send(msg);
-                })
-                .catch(function (err) {
-                    node.error(err.message, err);
-                });
+                .then(() => node.send(msg))
+                .catch((err) => node.error(err.message, err));
         })
     }
 

@@ -27,7 +27,7 @@ Use this token when creating an installation of Nanoleaf Aurora for the other no
 * Brightness; set the current brightness. Integer payload; 0 -> 100. 
     - Numbers less than 0 are clipped to 0
     - Numbers greater than 100 clipped to 100
-* Color; initially support for RGB and HSV
+* Color; support for hex (#RRGGBB), [css keyword](https://drafts.csswg.org/css-color/#named-colors)), RGB and HSV
 * Effects; list installed effects
 * Effect; set the current effect and start the show
 * Identify; flash the Nanoleaf Aurora installation on and off (colour cannot be changed)
@@ -37,7 +37,16 @@ Use this token when creating an installation of Nanoleaf Aurora for the other no
 * Power; switch on/off
 * Power status; on/off
 
+## Changes ahead ##
+
+Since the library [nanoleaf-aurora-client](https://github.com/darrent/nanoleaf-aurora-api/blob/master/README.md) this project
+uses is no longer under active development I'll be removing the dependency at some point. Probably by reimplementing it
+directly.
+
 ## Changelog ##
+
+### 0.0.5 (2019.02.22)
+- Additional color options
 
 ### 0.0.4 (2019.02.02)
 - Added color node [requested](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/1) by arrichter

@@ -7,19 +7,18 @@ module.exports = function (RED) {
 
         var installationObj = RED.nodes.getNode(config.installation);
 
-        this.on("input", function (msg) {
+        this.on("input", (msg) => {
             var payload = msg.payload;
 
             if (typeof payload === "string") {
+                node.status({
+                    text: payload
+                });
                 installationObj.api().setEffect(payload)
-                    .then(function (info) {
-                        node.send(msg);
-                    })
-                    .catch(function (err) {
-                        node.error(err.message, err);
-                    });
+                    .then(() => node.send(msg))
+                    .catch((err) => node.error(err.message, err));
             } else {
-                node.error(`Unknown payload type: ${typeof payload}`);
+                node.error(`Unknown payload type: ${typeof payload}. ${JSON.stringify(payload)}`);
             }
         })
     }

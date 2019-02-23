@@ -3,8 +3,13 @@
     "name": "John Morrison"
   },
   "dependencies": {
-    "nanoleaf-aurora-client": "1.2.2",
+    "color-convert": "2.0.0",
+    "color-name": "1.1.4",
+    "nanoleaf-aurora-client": "^1.2.2",
     "request": "2.87.0"
+  },
+  "devDependencies": {
+    "ava": "^1.2.1"
   },
   "deprecated": false,
   "keywords": [
@@ -18,24 +23,27 @@
   ],
   "license": "Apache-2.0",
   "name": "node-red-contrib-nanoleaf-aurora",
-  "node-red": {
-    "nodes": {
-      "installation": "nodes/installation.js",
-
-      "brightness": "nodes/brightness.js",
-      "effects": "nodes/effects.js",
-      "effect": "nodes/effect.js",
-      "identify": "nodes/identify.js",
-      "information": "nodes/information.js",
-      "power-status": "nodes/power-status.js",
-      "power": "nodes/power.js",
-
-      "new-access-token": "nodes/new-access-token.js"
-    }
+  "bugs": {
+    "url": "https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues"
   },
+  "homepage": "https://github.com/morrijr/node-red-contrib-nanoleaf-aurora#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/morrijr/node-red-contrib-nanoleaf-aurora.git"
   },
-  "version": "0.0.3"
+  "node-red": {
+    "nodes": {
+      "new-access-token": "nodes/new-access-token.js",
+      "installation": "nodes/installation.js",
+      "brightness": "nodes/brightness.js",
+      "color": "nodes/color.js",
+      "effect": "nodes/effect.js",
+      "effects": "nodes/effects.js",
+      "identify": "nodes/identify.js",
+      "information": "nodes/information.js",
+      "power-status": "nodes/power-status.js",
+      "power": "nodes/power.js"
+    }
+  },
+  "version": "0.0.5"
 }

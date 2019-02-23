@@ -7,14 +7,10 @@ module.exports = function (RED) {
 
         var installationObj = RED.nodes.getNode(config.installation);
 
-        this.on("input", function (msg) {
+        this.on("input", (msg) => {
             installationObj.api().identify()
-                .then(function (info) {
-                    node.send(msg);
-                })
-                .catch(function (err) {
-                    node.error(err.message, err);
-                });
+                .then(() => node.send(msg))
+                .catch((err) => node.error(err.message, err));
         })
     }
 

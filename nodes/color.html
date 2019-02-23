@@ -29,10 +29,16 @@
 
 <script type="text/x-red" data-help-name="color">
     <p>Set Nanoleaf Aurora color</p>
+    <p>Hex where the payload is #[red 00 -> ff][green 00 -> ff][blue 0 -> ff]</p>
+    <p>CSS color keyword from the <a href='https://drafts.csswg.org/css-color/#named-colors'>list</a></p>
     <p>HSV where the payload is { hue, saturation, value } or { h, s, v }</p>
     <p>RGB where the payload is { red, green, blue } or { r, g, b }</p>
+    <p>HSL where the payload is { h, s, l }</p>
+    <p>CMYK where the payload is { c, m, y, k }</p>
     <p>A payload with both HSV and RGB will use HSV</p>
     <p>An empty payload will currently be ignored (plan to return current color in the future).</p>
     <p>Currently no limits are in place, raw values are passed directly to the Nanoleaf.</p>
-    <p>Further enhancement maybe made to enable colors to be set in the style of CSS, but no promises!</p>
+    <p>Conversions are done with the assistance of the 
+        <a href='https://www.npmjs.com/package/color-convert'>color-convert</a> library. If there
+        are requests for any of the other formats it supports, just drop me a note.</p>
 </script>

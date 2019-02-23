@@ -1,4 +1,4 @@
-module.exports = function(RED) {
+module.exports = function (RED) {
     "use strict";
 
     function Information(config) {
@@ -7,15 +7,13 @@ module.exports = function(RED) {
 
         var installationObj = RED.nodes.getNode(config.installation);
 
-        this.on("input", function(msg) {
+        this.on("input", (msg) => {
             installationObj.api().getInfo()
-                .then(function(info) {
+                .then((info) => {
                     msg.payload = JSON.parse(info);
                     node.send(msg);
                 })
-                .catch(function(err) {
-                    node.error(err.message, err);
-                });
+                .catch((err) => node.error(err.message, err));
         })
     }
 
