@@ -1,24 +1,36 @@
 module.exports = function (RED) {
-    "use strict";
+    'use strict'
 
     function PowerStatus(config) {
-        RED.nodes.createNode(this, config);
-        var node = this;
+        RED.nodes.createNode(this, config)
+        var node = this
 
-        var installationObj = RED.nodes.getNode(config.installation);
+        var installationObj = RED.nodes.getNode(config.installation)
 
-        this.on("input", (msg) => {
-            installationObj.api().getPowerStatus()
+        const convertOutput = (info) => {
+            switch (config.outputType) {
+                case 'Boolean':
+                    return info
+                case 'Numeric':
+                    return info ? 1 : 0
+                case 'String':
+                default:
+                    return info ? 'ON' : 'OFF'
+            }
+        }
+
+        this.on('input', (msg) => {
+            installationObj.state('on')
                 .then((info) => {
-                    msg.payload = JSON.parse(info).value ? 'ON' : 'OFF';
+                    msg.payload = convertOutput(info)
                     node.status({
                         text: `Powered '${msg.payload}'`
-                    });
-                    node.send(msg);
+                    })
+                    node.send(msg)
                 })
-                .catch((err) => node.error(err.message, err));
+                .catch((err) => node.error(err.message, err))
         })
     }
 
-    RED.nodes.registerType("power-status", PowerStatus);
+    RED.nodes.registerType('power-status', PowerStatus)
 }

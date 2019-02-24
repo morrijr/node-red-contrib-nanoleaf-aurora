@@ -1,7 +1,7 @@
 module.exports = function (RED) {
-    "use strict";
-    var colors = require('color-name');
-    const colorConvert = require('color-convert');
+    'use strict'
+    const colors = require('color-name')
+    const colorConvert = require('color-convert')
 
     const matched = (x) => ({
         on: () => matched(x),
@@ -24,34 +24,37 @@ module.exports = function (RED) {
         .on((c) => (c.red + c.green + c.blue) && typeof (c.red + c.green + c.blue) === 'number', (c) => [colorConvert.rgb.hsv, [c.red, c.green, c.blue]])
         .on((c) => (c.h + c.s + c.l) && typeof (c.h + c.s + c.l) === 'number', (c) => [colorConvert.hsl.hsv, [c.h, c.s, c.l]])
         .on((c) => (c.c + c.m + c.y + c.k) && typeof (c.c + c.m + c.y + c.k) === 'number', (c) => [colorConvert.cmyk.hsv, [c.c, c.m, c.y, c.k]])
-        .otherwise(() => null);
+        .otherwise(() => null)
 
     function Color(config) {
-        RED.nodes.createNode(this, config);
-        var node = this;
+        RED.nodes.createNode(this, config)
+        var node = this
 
-        var installationObj = RED.nodes.getNode(config.installation);
+        var installationObj = RED.nodes.getNode(config.installation)
 
-        this.on("input", function (msg) {
-            node.status({});
-            var payload = msg.payload;
+        this.on('input', function (msg) {
+            node.status({})
+            var payload = msg.payload
             if (payload) {
-                var decoder = colorDecoder(payload);
+                var decoder = colorDecoder(payload)
                 if (decoder === null) {
                     node.error(`Unable to decode: ${typeof payload}. ${JSON.stringify(payload)}`)
                 } else {
-                    var hsv = decoder[0](decoder[1]);
+                    var hsv = decoder[0](decoder[1])
                     node.status({
                         text: `RGB: '${JSON.stringify(colorConvert.hsv.rgb(hsv))}' HSV: '${JSON.stringify(hsv)}'`
-                    });
-                    installationObj.api().setHSV(hsv[0], hsv[1], hsv[2])
-                        .catch((err) => node.error(err.message, err));
+                    })
+                    installationObj.setStates({
+                        hue: hsv[0],
+                        sat: hsv[1],
+                        brightness: hsv[2]
+                    }).catch((err) => node.error(err.message, err))
                 }
             } else {
-                node.error(`Unknown payload type: ${typeof payload}. ${JSON.stringify(payload)}`);
+                node.error(`Unknown payload type: ${typeof payload}. ${JSON.stringify(payload)}`)
             }
         })
     }
 
-    RED.nodes.registerType("color", Color);
+    RED.nodes.registerType('color', Color)
 }

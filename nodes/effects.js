@@ -1,21 +1,43 @@
 module.exports = function (RED) {
-    "use strict";
+    'use strict'
 
     function Effects(config) {
-        RED.nodes.createNode(this, config);
-        var node = this;
+        RED.nodes.createNode(this, config)
+        var node = this
 
-        var installationObj = RED.nodes.getNode(config.installation);
+        var installationObj = RED.nodes.getNode(config.installation)
 
-        this.on("input", function (msg) {
-            installationObj.api().listEffects()
-                .then((effects) => {
-                    msg.payload = JSON.parse(effects);
-                    node.send(msg);
+        const convertOutputType = (values) => {
+            switch (config.outputType) {
+                case 'combined':
+                    return {
+                        selected: values[1],
+                        available: values[0]
+                    }
+                case 'selected':
+                    return values[1]
+                case 'available':
+                default:
+                    return values[0]
+            }
+        }
+
+        this.on('input', function (msg) {
+            Promise.all(
+                [
+                    installationObj.effects(),
+                    installationObj.effect()
+                ])
+                .then((values) => {
+                    node.status({
+                        text: values[1]
+                    })
+                    msg.payload = convertOutputType(values)
+                    node.send(msg)
                 })
-                .catch((err) => node.error(err.message, err));
+                .catch((err) => node.error(err.message, err))
         })
     }
 
-    RED.nodes.registerType("effects", Effects);
+    RED.nodes.registerType('effects', Effects)
 }
