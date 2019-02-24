@@ -3,13 +3,13 @@
     "name": "John Morrison"
   },
   "dependencies": {
+    "axios": "0.18.0",
     "color-convert": "2.0.0",
-    "color-name": "1.1.4",
-    "nanoleaf-aurora-client": "^1.2.2",
-    "request": "2.87.0"
+    "color-name": "1.1.4"
   },
   "devDependencies": {
-    "ava": "^1.2.1"
+    "ava": "^1.2.1",
+    "eslint": "^5.14.1"
   },
   "deprecated": false,
   "keywords": [
@@ -42,8 +42,9 @@
       "identify": "nodes/identify.js",
       "information": "nodes/information.js",
       "power-status": "nodes/power-status.js",
-      "power": "nodes/power.js"
+      "power": "nodes/power.js",
+      "advanced": "nodes/advanced.js"
     }
   },
-  "version": "0.0.5"
+  "version": "0.1.0"
 }

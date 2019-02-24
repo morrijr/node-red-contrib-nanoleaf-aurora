@@ -7,9 +7,10 @@
         outputs: 1,
         defaults: {
             name: { value: '' },
-            installation: { type: 'installation' }
+            installation: { type: 'installation' },
+            outputType: { value: 'available' }
         },
-        label: function() {
+        label: function () {
             return this.name || 'effects';
         }
     });
@@ -24,8 +25,19 @@
         <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
         <input type="text" id="node-input-installation"/>
     </div>
+    <div class="form-row">
+        <label for="node-input-outputType"><i class="fa fa-envelope"></i> Output</label>
+        <select id="node-input-outputType">
+            <option selected value='available'>Available array</option>
+            <option value='selected'>Currently selected</option>
+            <option value='combined'>Combined object { selected, available[] }</option>
+        </select>
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="effects">
-    <p>Array of installed Nanoleaf Aurora effects.</p>
+    <p>Depending upon the selected output type:</p>
+    <p>Available; Array of installed Nanoleaf Aurora effects.</p>
+    <p>Selected; Currently selected Nanoleaf Aurora effect.</p>
+    <p>Combined; Currently selected and array of installed Nanoleaf Aurora effects.</p>
 </script>

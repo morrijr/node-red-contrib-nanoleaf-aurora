@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('advanced', {
+        category: 'nanoleaf',
+        color: '#e6e0f8',
+        icon: 'alert.png',
+        align: 'right',
+        inputs: 1,
+        outputs: 1,
+        defaults: {
+            name: { value: '' },
+            installation: { type: 'installation' },
+            operation: { value: 'get' },
+            includeAuthToken: { value: 'checked' },
+            uri: { value: '/' }
+        },
+        label: function () {
+            return this.name || 'advanced';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="advanced">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
+        <input type="text" id="node-input-installation"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-operation"><i class="fa fa-envelope"></i> Operation</label>
+        <select id="node-input-operation">
+            <option selected>get</option>
+            <option>put</option>
+            <option>post</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-includeAuthToken"><i class="fa fa-envelope"></i> Include auth token</label>
+        <input type="checkbox" id="node-input-includeAuthToken"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-uri"><i class="fa fa-envelope"></i> URI</label>
+        <input type="text" id="node-input-uri"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="advanced">
+    <p>Advanced manipulation of the Nanoleaf Aurora.</p>
+    <p>This is an advanced node which allows passing the payload directly to the Nanoleaf api.<br/>
+        <em style='color:red'>Do not use</em> unless you are familiar with the api and its
+        properties.</p>
+    <p>Not every combination of configuration will result in a sensible outcome and <em>no</em>
+        effort has been made to restrict what you can do.</p>
+    <p>Put and post operations will pass the input payload as the JSON body, payload is ignored for get operation.</p>
+    <p>You can choose to not include the configured auth token.</p>
+    <p>URI will be appended to the end of the request URI.</p>
+    <p>Any JSON returned from the Nanoleaf Aurora will be placed in the output payload.</p>
+</script>

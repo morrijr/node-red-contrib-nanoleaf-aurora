@@ -7,9 +7,10 @@
         outputs: 1,
         defaults: {
             name: { value: '' },
-            installation: { type: 'installation' }
+            installation: { type: 'installation' },
+            outputType: { value: 'String' }
         },
-        label: function() {
+        label: function () {
             return this.name || 'power-status';
         }
     });
@@ -24,8 +25,18 @@
         <label for="node-input-installation"><i class="fa fa-tag"></i> Installation</label>
         <input type="text" id="node-input-installation"/>
     </div>
+    <div class="form-row">
+        <label for="node-input-outputType"><i class="fa fa-envelope"></i> Output</label>
+        <select id="node-input-outputType">
+            <option selected>String</option>
+            <option>Boolean</option>
+            <option>Numeric</option>
+        </select>
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="power-status">
     <p>Upon trigger outputs the Nanoleaf Aurora information into msg.payload.</p>
+    <p>Available output types: String ('ON', 'OFF'), Boolean (true = ON, false = OFF)
+        and Numeric (1 = ON, 0 = OFF)</p>
 </script>

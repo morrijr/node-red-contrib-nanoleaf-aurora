@@ -10,7 +10,7 @@
             name: { value: '' },
             installation: { type: 'installation' }
         },
-        label: function() {
+        label: function () {
             return this.name || 'brightness';
         }
     });
@@ -28,5 +28,8 @@
 </script>
 
 <script type="text/x-red" data-help-name="brightness">
-    <p>Set Nanoleaf Aurora brightness (integer; 0 -> 100).</p>
+    <p>If the payload is a number. Set Nanoleaf Aurora brightness (integer; 0 -> 100).</p>
+    <p>If the payload is an object of the form { brightness, duration } where 
+        brightness is integer; (0, 100] and duration is time to transition in seconds. 
+        Set the brightness over that duration.</p>
 </script>

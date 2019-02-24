@@ -1,35 +1,23 @@
 module.exports = function (RED) {
-    "use strict";
-    const request = require('request');
+    'use strict'
+    const axios = require('axios')
 
     function NewAccessToken(config) {
-        RED.nodes.createNode(this, config);
-        var node = this;
+        RED.nodes.createNode(this, config)
+        var node = this
 
-        this.on("input", function (msg) {
-            request(
-                {
-                    method: 'POST',
-                    url: 'http://' + config.host + ":" + config.port + config.query,
-                },
-                (error, response) => {
-                    if (error) {
-                        node.error(error.message, error);
-                        return;
-                    }
-
-                    try {
-                        msg.payload = JSON.parse(response.body).auth_token;
-                        node.status({
-                            text: `AccessToken: '${msg.payload}'`
-                        });
-                        node.send(msg);
-                    } catch (e) {
-                        node.error('AccessToken not created. Check the host address and try again.');
-                    }
-                });
+        this.on('input', function (msg) {
+            axios.post(`http://${config.host}:${config.port}${config.query}`)
+                .then(r => {
+                    msg.payload = r.data.auth_token
+                    node.status({
+                        text: `AccessToken: '${msg.payload}'`
+                    })
+                    node.send(msg)
+                })
+                .catch((err) => node.error(err.message, err))
         })
     }
 
-    RED.nodes.registerType("new-access-token", NewAccessToken);
+    RED.nodes.registerType('new-access-token', NewAccessToken)
 }
