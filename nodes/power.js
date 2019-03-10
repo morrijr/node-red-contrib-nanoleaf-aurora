@@ -14,11 +14,11 @@ module.exports = function (RED) {
             if ((typeof payload === 'boolean' && payload === true) ||
                 (typeof payload === 'number' && payload === 1) ||
                 (typeof payload === 'string' && payload.toLocaleUpperCase() === 'ON')) {
-                operation = true
+                operation = { 'value': true }
             } else if ((typeof payload === 'boolean' && payload === false) ||
                 (typeof payload === 'number' && payload === 0) ||
                 (typeof payload === 'string' && payload.toLocaleUpperCase() === 'OFF')) {
-                operation = false
+                operation = { 'value': false }
             } else {
                 node.error(`Unrecognised payload type: ${typeof payload}. ${JSON.stringify(payload)}`)
                 return

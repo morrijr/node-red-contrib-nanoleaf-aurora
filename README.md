@@ -39,9 +39,13 @@ Use this token when creating an installation of Nanoleaf Aurora for the other no
   <em>DO NOT</em> use unless you know what you are doing! 
 
 ## Changes ahead ##
-Nothing more planned! If you want something, please raise an issue or a pull request.
+No more nodes planned! If you want something, please raise an issue or a pull request.
+Tests. All this was written 'blind' or by testing manually. If anyone could help with a PR which shows how to test at least a single node that would be <em>much</em> appreciated.
 
 ## Changelog ##
+
+### 0.1.1 (2019.03.19)
+- [issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/3) Fix to power node for Canvas. Thanks to TonKkkkk
 
 ### 0.1.0 (2019.02.24)
 - Migrated from original dependency [nanoleaf-aurora-client](https://github.com/darrent/nanoleaf-aurora-api/blob/master/README.md) which is no longer supported. Thanks guys, the code was appreciated!
@@ -61,7 +65,7 @@ Nothing more planned! If you want something, please raise an issue or a pull req
 - Additional color options
 
 ### 0.0.4 (2019.02.02)
-- Added color node [requested](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/1) by arrichter
+- [enhancement](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/1) Added color node requested by arrichter
 
 ### 0.0.3 (2018.08.12)
 - Added brightness node
