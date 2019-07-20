@@ -19,30 +19,77 @@ Fill in the host ip of your Nanoleaf Aurora.  Deploy then hold the on-off button
 
 Use this token when creating an installation of Nanoleaf Aurora for the other nodes.
 
+## Currently tested with NanoLeaf firmware ##
+3.1.2
+If you are encountering issues with a newer firmware, please open a [GitHub issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/new). 
+
 ## Current nodes implemented ##
-* Brightness; set the current brightness. 
-  * Integer payload; 0 -> 100. 
+### Brightness ###
+Set the current brightness. 
+* Integer payload; 0 -> 100. 
     - Numbers less than 0 are clipped to 0
     - Numbers greater than 100 clipped to 100
-  * Object payload { brightness (0, 100], duration (seconds) }
-* Color; support for hex (#RRGGBB), [css keyword](https://drafts.csswg.org/css-color/#named-colors)), RGB and HSV
-* Effects; list installed effects, current effect or both
-* Effect; set the current effect and start the show
-* Identify; flash the Nanoleaf Aurora installation on and off (colour cannot be changed)
-* Installation; shared configuration node used by all but the new access token node
-* Information; dump of all the information supplied by the Nanoleaf Aurora installation
-* New access token; create a new access token (see above)
-* Power; switch on/off
-* Power status; on/off
-* Advanced; direct manipulation of the restful
-  [API](https://forum.nanoleaf.me/docs/openapi) implemented by Nanoleaf.
-  <em>DO NOT</em> use unless you know what you are doing! 
+* Object payload { brightness (0, 100], duration (seconds) }
+### Color ###
+For hex and css keyword where the payload was just a string you can specify duration by creating a structure (see below) instead.
+Duration is an integer in seconds which defaults to 0.
+#### HEX ####
+    { "#RRGGBB" } or
+    { "color": "#RRGGBB", "duration": [seconds] }
+#### CSS Keyword ####
+Available keywords can be found at [https://drafts.csswg.org/css-color/#named-colors](https://drafts.csswg.org/css-color/#named-colors). Keywords are case insensitive.
+
+    { "css keyword" }
+    { "color": "css keyword", "duration": [seconds] }
+#### RGB ####
+    { r, g, b }
+    { red, green, blue }
+    { r, g, b, duration }
+    { red, green, blue, duration }
+#### HSV ####
+    { h, s, v }
+    { h, s, b }
+    { hue, saturation, value }
+    { hue, saturation, brightness }
+    { h, s, v, duration }
+    { h, s, b, duration }
+    { hue, saturation, value, duration }
+    { hue, saturation, brightness, duration }
+#### HSL ####
+    { h, s, l }
+    { h, s, l, duration }
+#### CMYK ####
+    { c, m, y, k }
+    { c, m, y, k, duration }
+### Effects ###
+List installed effects, current effect or both
+### Effect ###
+Set the current effect and start the show
+### Identify ###
+Flash the Nanoleaf Aurora installation on and off (colour cannot be changed)
+### Installation ###
+Shared configuration node used by all but the new access token node
+### Information ###
+Dump of all the information supplied by the Nanoleaf Aurora installation
+### New access token ##
+Create a new access token (see above)
+### Power ###
+Switch on/off
+### Power status ###
+on/off
+### Advanced ###
+Direct manipulation of the restful [API](https://forum.nanoleaf.me/docs/openapi) implemented by Nanoleaf. <em>DO NOT</em> use unless you know what you are doing! 
 
 ## Changes ahead ##
 No more nodes planned! If you want something, please raise an issue or a pull request.
 Tests. All this was written 'blind' or by testing manually. If anyone could help with a PR which shows how to test at least a single node that would be <em>much</em> appreciated.
 
 ## Changelog ##
+
+### 0.2.0 (2019.07.20)
+- Changes to the API forced changes to the color node. Thanks to arrichter for pointing out the break
+- Allow the setting of a duration in the color node. For the payload types that were just a string extend to be a structure of color and duration.
+- Bumped all dependencies to latest
 
 ### 0.1.1 (2019.03.19)
 - [issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/3) Fix to power node for Canvas. Thanks to TonKkkkk

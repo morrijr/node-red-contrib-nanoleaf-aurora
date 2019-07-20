@@ -4,6 +4,7 @@ module.exports = function (RED) {
 
     function Installation(config) {
         RED.nodes.createNode(this, config)
+        var node = this
 
         this.host = config.host
         this.base = config.base
@@ -18,7 +19,7 @@ module.exports = function (RED) {
         this.identify = () => this.request().put('/identify').then(r => r.data)
 
         this.state = (field) => this.request().get(`/state/${field}`)
-            .then(r => r.data.hasOwnProperty('value') ? r.data.value : r.data)
+            .then(r => Object.prototype.hasOwnProperty.call(r, 'value') ? r.data.value : r.data)
 
         this.setState = (field, value) => this.setStates({ [field]: value })
         this.setStates = (state) => this.request().put('/state', state)
