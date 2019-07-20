@@ -85,6 +85,8 @@ No more nodes planned! If you want something, please raise an issue or a pull re
 Tests. All this was written 'blind' or by testing manually. If anyone could help with a PR which shows how to test at least a single node that would be <em>much</em> appreciated.
 
 ## Changelog ##
+### 0.2.1 (2019.07.20)
+- Messed up the npm publish. Try again...
 
 ### 0.2.0 (2019.07.20)
 - Changes to the API forced changes to the color node. Thanks to arrichter for pointing out the break
