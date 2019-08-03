@@ -22,7 +22,7 @@ module.exports = function (RED) {
         this.on('input', (msg) => {
             installationObj.state('on')
                 .then((info) => {
-                    msg.payload = convertOutput(info)
+                    msg.payload = convertOutput(info.value)
                     node.status({
                         text: `Powered '${msg.payload}'`
                     })
