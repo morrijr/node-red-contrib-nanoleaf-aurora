@@ -20,7 +20,7 @@ Fill in the host ip of your Nanoleaf Aurora.  Deploy then hold the on-off button
 Use this token when creating an installation of Nanoleaf Aurora for the other nodes.
 
 ## Currently tested with NanoLeaf firmware ##
-3.1.2
+3.1.3
 If you are encountering issues with a newer firmware, please open a [GitHub issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/new). 
 
 ## Current nodes implemented ##
