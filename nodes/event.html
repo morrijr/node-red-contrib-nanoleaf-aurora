@@ -1,21 +1,22 @@
 <script type="text/javascript">
-    RED.nodes.registerType('information', {
+    RED.nodes.registerType('event', {
         category: 'nanoleaf',
         color: '#3eaf24',
         icon: 'nanoleaf.png',
-        inputs: 1,
+        align: 'right',
+        inputs: 0,
         outputs: 1,
         defaults: {
             name: { value: '' },
             installation: { type: 'installation' }
         },
-        label: function() {
-            return this.name || 'information';
+        label: function () {
+            return this.name || 'event';
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="information">
+<script type="text/x-red" data-template-name="event">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name"/>
@@ -26,6 +27,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="information">
-    <p>Upon trigger outputs the Nanoleaf Aurora information into msg.payload.</p>
+<script type="text/x-red" data-help-name="event">
+    <p>Nanoleaf events</p>
 </script>
