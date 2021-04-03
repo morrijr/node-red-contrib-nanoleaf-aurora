@@ -1,0 +1,988 @@
+[
+    {
+        "id": "4a24bdba.dd54c4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "800e9fd9.d8ef9",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f9423910.6f0bf",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "List",
+        "topic": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "ac4ca3f.892a56"
+            ]
+        ]
+    },
+    {
+        "id": "488a759c.29f534",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Moonlight",
+        "topic": "",
+        "payload": "moonlight",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "b9623a4c.eddef8"
+            ]
+        ]
+    },
+    {
+        "id": "3dc770f9.7aaf1",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Meteor Shower",
+        "topic": "",
+        "payload": "Meteor Shower",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "b9623a4c.eddef8"
+            ]
+        ]
+    },
+    {
+        "id": "e7d02f6e.8cc77",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Shooting Stars",
+        "topic": "",
+        "payload": "Shooting Stars",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "b9623a4c.eddef8"
+            ]
+        ]
+    },
+    {
+        "id": "f563a006.b29348",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Off",
+        "topic": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "8ebb3682.8cca1"
+            ]
+        ]
+    },
+    {
+        "id": "8b601f6.c3dc7e",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "On",
+        "topic": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "8ebb3682.8cca1"
+            ]
+        ]
+    },
+    {
+        "id": "59e25cbc.01e13c",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Create new access token",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 40,
+        "wires": [
+            [
+                "8e57d0af.088218"
+            ]
+        ]
+    },
+    {
+        "id": "1acb871b.6d4809",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "92d1cb65.350d7",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "37531809.ce2d4"
+            ]
+        ]
+    },
+    {
+        "id": "f16b2f08.068488",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1901ff26.64caa9",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "ca288af1.e66cb"
+            ]
+        ]
+    },
+    {
+        "id": "2abb8e09.815492",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8c13be51.86602",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "10%",
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "febbb3cd.67072"
+            ]
+        ]
+    },
+    {
+        "id": "b8d64b8a.b2ba28",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "100%",
+        "topic": "",
+        "payload": "100",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "febbb3cd.67072"
+            ]
+        ]
+    },
+    {
+        "id": "a2aab43.e610fc8",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "50%",
+        "topic": "",
+        "payload": "50",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "febbb3cd.67072"
+            ]
+        ]
+    },
+    {
+        "id": "febbb3cd.67072",
+        "type": "brightness",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 430,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ac4ca3f.892a56",
+        "type": "effects",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "outputType": "combined",
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "800e9fd9.d8ef9"
+            ]
+        ]
+    },
+    {
+        "id": "b9623a4c.eddef8",
+        "type": "effect",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 410,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "37531809.ce2d4",
+        "type": "information",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 430,
+        "y": 80,
+        "wires": [
+            [
+                "f16b2f08.068488"
+            ]
+        ]
+    },
+    {
+        "id": "ca288af1.e66cb",
+        "type": "power-status",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "2abb8e09.815492"
+            ]
+        ]
+    },
+    {
+        "id": "8ebb3682.8cca1",
+        "type": "power",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 410,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8e57d0af.088218",
+        "type": "new-access-token",
+        "z": "4a24bdba.dd54c4",
+        "host": "192.168.1.14",
+        "query": "/api/v1/new",
+        "port": 16021,
+        "x": 450,
+        "y": 40,
+        "wires": [
+            [
+                "1acb871b.6d4809"
+            ]
+        ]
+    },
+    {
+        "id": "e3b59984.740338",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "75%",
+        "topic": "",
+        "payload": "75",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 640,
+        "wires": [
+            [
+                "febbb3cd.67072"
+            ]
+        ]
+    },
+    {
+        "id": "3626877b.7a8cd",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Snowfall",
+        "topic": "",
+        "payload": "Snowfall",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "b9623a4c.eddef8"
+            ]
+        ]
+    },
+    {
+        "id": "6128580.97e45a8",
+        "type": "color",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 410,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "313d5a39.7da9a6",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "red green blue",
+        "topic": "",
+        "payload": "{\"red\":100,\"green\":10,\"blue\":50}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 800,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "1c0833ee.48766c",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "r g b",
+        "topic": "",
+        "payload": "{\"r\":10,\"g\":100,\"b\":5}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 760,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "88def45b.1b07d",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "hue saturation and value",
+        "topic": "",
+        "payload": "{\"hue\":15,\"saturation\":50,\"value\":40}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 880,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "65db56bc.b63fc",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "h s v",
+        "topic": "",
+        "payload": "{\"h\":10,\"s\":100,\"v\":5}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 840,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "16568e21.1d0612",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "red",
+        "topic": "",
+        "payload": "red",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 920,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "3d7a4255.1b0ade",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "h s v",
+        "topic": "",
+        "payload": "{\"h\":0,\"s\":100,\"v\":5}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 960,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "f0d8b328.00879",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "r g b",
+        "topic": "",
+        "payload": "{\"r\":10,\"g\":0,\"b\":5}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 1000,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "d48013a.57f4e7",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "#ab10cd",
+        "topic": "",
+        "payload": "#ab10cd",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 1040,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "59908e3e.473498",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "blue",
+        "topic": "",
+        "payload": "blue",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 1080,
+        "wires": [
+            [
+                "6128580.97e45a8"
+            ]
+        ]
+    },
+    {
+        "id": "7b89607.5d307a",
+        "type": "identify",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "installation": "8656eed9.f08d6",
+        "x": 420,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8146004d.55f9a8",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "7b89607.5d307a"
+            ]
+        ]
+    },
+    {
+        "id": "c698361.46e8c48",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "10% over 5s",
+        "topic": "",
+        "payload": "{\"brightness\":10,\"duration\":5}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "febbb3cd.67072"
+            ]
+        ]
+    },
+    {
+        "id": "75baa0ce.a7f61",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "100% over 5s",
+        "topic": "",
+        "payload": "{\"brightness\":100,\"duration\":5}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "febbb3cd.67072"
+            ]
+        ]
+    },
+    {
+        "id": "b4a6783b.7ca108",
+        "type": "effect",
+        "z": "4a24bdba.dd54c4",
+        "name": "Advanced Effect",
+        "installation": "8656eed9.f08d6",
+        "x": 440,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f9f02864.48812",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "Moonlight",
+        "topic": "",
+        "payload": "{\"select\":\"moonlight\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 480,
+        "wires": [
+            [
+                "b4a6783b.7ca108"
+            ]
+        ]
+    },
+    {
+        "id": "735d2025.c7017",
+        "type": "advanced",
+        "z": "4a24bdba.dd54c4",
+        "name": "Info",
+        "installation": "8656eed9.f08d6",
+        "operation": "get",
+        "includeAuthToken": true,
+        "uri": "/",
+        "x": 330,
+        "y": 1160,
+        "wires": [
+            [
+                "231278c4.34293"
+            ]
+        ]
+    },
+    {
+        "id": "d658fd50.e14f5",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 1160,
+        "wires": [
+            [
+                "735d2025.c7017"
+            ]
+        ]
+    },
+    {
+        "id": "231278c4.34293",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "495ac8ee.f65c58",
+        "type": "advanced",
+        "z": "4a24bdba.dd54c4",
+        "name": "set state color temp",
+        "installation": "8656eed9.f08d6",
+        "operation": "put",
+        "includeAuthToken": true,
+        "uri": "/state",
+        "x": 370,
+        "y": 1240,
+        "wires": [
+            [
+                "8038592b.0bb618"
+            ]
+        ]
+    },
+    {
+        "id": "4423c7fe.4252c8",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "ct",
+        "topic": "",
+        "payload": "{\"ct\":{\"value\":3000}}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 1240,
+        "wires": [
+            [
+                "495ac8ee.f65c58"
+            ]
+        ]
+    },
+    {
+        "id": "8038592b.0bb618",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "3b2b2615.f9cd1a",
+        "type": "advanced",
+        "z": "4a24bdba.dd54c4",
+        "name": "state color temp",
+        "installation": "8656eed9.f08d6",
+        "operation": "get",
+        "includeAuthToken": true,
+        "uri": "/state/ct",
+        "x": 360,
+        "y": 1200,
+        "wires": [
+            [
+                "ddd665f.d8b7b98"
+            ]
+        ]
+    },
+    {
+        "id": "2ff49c19.91b4b4",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 1200,
+        "wires": [
+            [
+                "3b2b2615.f9cd1a"
+            ]
+        ]
+    },
+    {
+        "id": "ddd665f.d8b7b98",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "27ea4261.0547ae",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "cf9706a6.a40888",
+        "type": "advanced",
+        "z": "4a24bdba.dd54c4",
+        "name": "state color mode",
+        "installation": "8656eed9.f08d6",
+        "operation": "get",
+        "includeAuthToken": true,
+        "uri": "/state/colorMode",
+        "x": 360,
+        "y": 1280,
+        "wires": [
+            [
+                "27ea4261.0547ae"
+            ]
+        ]
+    },
+    {
+        "id": "db1cc5ba.27bee8",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "timestamp",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 1280,
+        "wires": [
+            [
+                "cf9706a6.a40888"
+            ]
+        ]
+    },
+    {
+        "id": "2a9989ad.8743be",
+        "type": "debug",
+        "z": "4a24bdba.dd54c4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 690,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "71ef3914.9220d",
+        "type": "advanced",
+        "z": "4a24bdba.dd54c4",
+        "name": "panel layout",
+        "installation": "8656eed9.f08d6",
+        "operation": "get",
+        "includeAuthToken": true,
+        "uri": "/panelLayout/layout",
+        "x": 350,
+        "y": 1320,
+        "wires": [
+            [
+                "2a9989ad.8743be"
+            ]
+        ]
+    },
+    {
+        "id": "81a8b46e.97a12",
+        "type": "inject",
+        "z": "4a24bdba.dd54c4",
+        "name": "timestamp",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 1320,
+        "wires": [
+            [
+                "71ef3914.9220d"
+            ]
+        ]
+    },
+    {
+        "id": "8656eed9.f08d6",
+        "type": "installation",
+        "z": 0,
+        "name": "Livingroom Aurora",
+        "host": "192.168.1.2",
+        "base": "/api/v1/",
+        "port": "16021",
+        "accessToken": "xxx"
+    }
+]

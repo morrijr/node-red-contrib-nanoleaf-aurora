@@ -28,6 +28,7 @@ module.exports = function (RED) {
         this.effect = () => this.request().get('/effects/select').then(r => r.data)
         this.setEffect = (name) => this.setEffects({ select: name })
         this.setEffects = (effect) => this.request().put('/effects', effect)
+        // this.event = (id) => this.request().get(`/events?id=${id}`).then(r => r.data)
     }
 
     RED.nodes.registerType('installation', Installation)
