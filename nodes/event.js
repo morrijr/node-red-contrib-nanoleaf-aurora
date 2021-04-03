@@ -7,17 +7,28 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config)
         var node = this
         var installationObj = RED.nodes.getNode(config.installation)
-        node.url = `http://${installationObj.host}:${installationObj.port}${installationObj.base}${installationObj.accessToken}`
+
+        if (installationObj && installationObj.host) {
+            node.url = `http://${installationObj.host}:${installationObj.port}${installationObj.base}${installationObj.accessToken}`
+            connect();
+        }
 
         node.status({fill: 'red', shape: 'ring', text: 'disconnected'})
-        connect()
+
 
         function handleEvent(e, eventType) {
             if (e.type === 'open')  return
 
+            var payload = e.data;
+            try {
+                payload = JSON.parse(e.data).events[0]
+            } catch (e) {
+                node.warn(payload);
+            }
+
             node.send({
                 event: eventType,
-                payload: JSON.parse(e.data).events[0],
+                payload: payload,
                 payload_raw: e.data
             })
         }

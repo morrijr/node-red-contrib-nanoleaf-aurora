@@ -22,7 +22,7 @@
     "led"
   ],
   "license": "Apache-2.0",
-  "name": "node-red-contrib-nanoleaf-aurora",
+  "name": "node-red-contrib-nanoleaf",
   "bugs": {
     "url": "https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues"
   },
@@ -47,5 +47,5 @@
       "event": "nodes/event.js"
     }
   },
-  "version": "0.3.0"
+  "version": "0.3.1"
 }
