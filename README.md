@@ -1,10 +1,10 @@
-# Nanoleaf Aurora Node-Red client #
+# Nanoleaf Node-Red client #
 A node-red module, which provides nodes to manipulate a Nanoleaf Aurora installation.
 
 ## Installation ##
-To install the stable version use the `Menu - Manage palette` option and search for `node-red-contrib-nanoleaf-aurora`, or run the following command in your Node-RED user directory (typically `~/.node-red`):
+To install the stable version use the `Menu - Manage palette` option and search for `node-red-contrib-nanoleaf`, or run the following command in your Node-RED user directory (typically `~/.node-red`):
 
-    npm i node-red-contrib-nanoleaf-aurora
+    npm i node-red-contrib-nanoleaf
 
 Open your Node-RED instance and you should have Nanoleaf Aurora nodes available in the palette.
 
@@ -21,7 +21,7 @@ Use this token when creating an installation of Nanoleaf Aurora for the other no
 
 ## Currently tested with NanoLeaf firmware ##
 3.1.3
-If you are encountering issues with a newer firmware, please open a [GitHub issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/new). 
+If you are encountering issues with a newer firmware, please open a [GitHub issue](https://github.com/andreypopov/node-red-contrib-nanoleaf/issues/new). 
 
 ## Current nodes implemented ##
 ### Brightness ###
@@ -86,7 +86,7 @@ Tests. All this was written 'blind' or by testing manually. If anyone could help
 
 ## Changelog ##
 ### 0.2.2 (2019.08.03)
-- [issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/4) Fix to power-status node. Thanks to narolinus
+- [issue](https://github.com/andreypopov/node-red-contrib-nanoleaf/issues/4) Fix to power-status node. Thanks to narolinus
 
 ### 0.2.1 (2019.07.20)
 - Messed up the npm publish. Try again...
@@ -97,10 +97,10 @@ Tests. All this was written 'blind' or by testing manually. If anyone could help
 - Bumped all dependencies to latest
 
 ### 0.1.1 (2019.03.19)
-- [issue](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/3) Fix to power node for Canvas. Thanks to TonKkkkk
+- [issue](https://github.com/andreypopov/node-red-contrib-nanoleaf/issues/3) Fix to power node for Canvas. Thanks to TonKkkkk
 
 ### 0.1.0 (2019.02.24)
-- Migrated from original dependency [nanoleaf-aurora-client](https://github.com/darrent/nanoleaf-aurora-api/blob/master/README.md) which is no longer supported. Thanks guys, the code was appreciated!
+- Migrated from original dependency [nanoleaf-client](https://github.com/darrent/nanoleaf-api/blob/master/README.md) which is no longer supported. Thanks guys, the code was appreciated!
 - Moved all requests to direct calls using the axios library
 - Brightness now supports, in addition to an 'immediate' brightness an object with a transition duration
 - Power-status node can set the output payload as
@@ -117,7 +117,7 @@ Tests. All this was written 'blind' or by testing manually. If anyone could help
 - Additional color options
 
 ### 0.0.4 (2019.02.02)
-- [enhancement](https://github.com/morrijr/node-red-contrib-nanoleaf-aurora/issues/1) Added color node requested by arrichter
+- [enhancement](https://github.com/andreypopov/node-red-contrib-nanoleaf/issues/1) Added color node requested by arrichter
 
 ### 0.0.3 (2018.08.12)
 - Added brightness node
