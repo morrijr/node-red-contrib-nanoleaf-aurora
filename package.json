@@ -5,7 +5,8 @@
   "dependencies": {
     "axios": "latest",
     "color-convert": "2.0.0",
-    "color-name": "1.1.4"
+    "color-name": "1.1.4",
+    "ping": "^0.4.1"
   },
   "devDependencies": {
     "ava": "2.2.0",
@@ -49,5 +50,5 @@
       "event": "nodes/event.js"
     }
   },
-  "version": "0.4.0"
+  "version": "0.4.1"
 }
