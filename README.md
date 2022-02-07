@@ -1,4 +1,16 @@
 # Nanoleaf Node-Red client #
+[![platform](https://img.shields.io/badge/platform-Node--RED-red?logo=nodered)](https://nodered.org)
+[![Min Node Version](https://img.shields.io/node/v/node-red-contrib-nanoleaf.svg)](https://nodejs.org/en/)
+[![GitHub version](https://img.shields.io/github/package-json/v/andreypopov/node-red-contrib-nanoleaf?logo=npm)](https://www.npmjs.com/package/node-red-contrib-nanoleaf)
+[![GitHub stars](https://img.shields.io/github/stars/andreypopov/node-red-contrib-nanoleaf)](https://github.com/andreypopov/node-red-contrib-nanoleaf/stargazers)
+[![Package Quality](https://packagequality.com/shield/node-red-contrib-nanoleaf.svg)](https://packagequality.com/#?package=node-red-contrib-nanoleaf)
+
+[![issues](https://img.shields.io/github/issues/andreypopov/node-red-contrib-nanoleaf?logo=github)](https://github.com/andreypopov/node-red-contrib-nanoleaf/issues)
+![GitHub last commit](https://img.shields.io/github/last-commit/andreypopov/node-red-contrib-nanoleaf)
+![NPM Total Downloads](https://img.shields.io/npm/dt/node-red-contrib-nanoleaf.svg)
+![NPM Downloads per month](https://img.shields.io/npm/dm/node-red-contrib-nanoleaf)
+![Repo size](https://img.shields.io/github/repo-size/andreypopov/node-red-contrib-nanoleaf)
+
 A node-red module, which provides nodes to manipulate a Nanoleaf Aurora installation.
 
 ## Installation ##
