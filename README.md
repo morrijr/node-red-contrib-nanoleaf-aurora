@@ -1,4 +1,4 @@
-# Nanoleaf Node-Red client #
+# Nanoleaf Node-Red client
 [![platform](https://img.shields.io/badge/platform-Node--RED-red?logo=nodered)](https://nodered.org)
 [![Min Node Version](https://img.shields.io/node/v/node-red-contrib-nanoleaf.svg)](https://nodejs.org/en/)
 [![GitHub version](https://img.shields.io/github/package-json/v/andreypopov/node-red-contrib-nanoleaf?logo=npm)](https://www.npmjs.com/package/node-red-contrib-nanoleaf)
