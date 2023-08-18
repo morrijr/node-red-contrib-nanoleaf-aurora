@@ -11,9 +11,13 @@ module.exports = function (RED) {
             installationObj.info()
                 .then((info) => {
                     msg.payload = info
+                    node.status({fill: 'green', shape: 'ring', text: 'ok'});
                     node.send(msg)
                 })
-                .catch((err) => node.error(err.message, err))
+                .catch((err) => {
+                    node.status({fill: 'red', shape: 'dot', text: err.code});
+                    node.error(err.message, err)
+                })
         })
     }
 

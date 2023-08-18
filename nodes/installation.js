@@ -9,13 +9,15 @@ module.exports = function (RED) {
         this.host = config.host
         this.base = config.base
         this.port = config.port
+        this.timeout = 3000
         this.accessToken = config.accessToken
 
         this.request = () => axios.create({
+            timeout: this.timeout,
             baseURL: `http://${this.host}:${this.port}${this.base}${this.accessToken}`
-        })
+        });
 
-        this.info = () => this.request().get('/').then(r => r.data)
+        this.info = () => this.request().get('/').then(r => r.data);
         this.identify = () => this.request().put('/identify').then(r => r.data)
 
         this.state = (field) => this.request().get(`/state/${field}`)
